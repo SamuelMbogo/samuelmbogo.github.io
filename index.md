@@ -1,7 +1,7 @@
 workin on it!
 
 ### Education
-<br><br>
+
 <img style="float: left;" src="images/polito.png?raw=true" width="30" height="30"/> &nbsp;&nbsp; Sep 2019 - present: **Polytechnic University of Turin** <br>
 &nbsp;&nbsp; MSc in [Data Science and Engineering](https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_a_acc=2020&p_sdu=37&p_cds=320)
 <br><br>
@@ -16,8 +16,8 @@ workin on it!
 
 ### Projects 
 
-[Project 1 Title](/sample_page) <!--- (/pdf/sample_presentation.pdf) (http://example.com/) --->
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+<!--- [Project 1 Title](/sample_page)  <!---(/pdf/sample_presentation.pdf) (http://example.com/) 
+<img src="images/dummy_thumbnail.jpg?raw=true"/> --->
 
 ---
 
