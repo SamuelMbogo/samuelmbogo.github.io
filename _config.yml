@@ -8,7 +8,7 @@ description: > # your text below (remove <br> elements if you don't need line br
   <br><br>
   <table style="width:100%">
     <tr>
-      <th><a href="https://www.linkedin.com/in/roberto-franceschi/"> <i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a></th>
+      <th><a href="https://www.linkedin.com/in/roberto-franceschi/"> <i class="fa fa-linkedin fa-2x" style="color:#0e76a8;" aria-hidden="true"></i></a></th>
       <th><a href="https://github.com/robertofranceschi"> <i class="fa fa-github fa-2x" aria-hidden="true"></i></a></th> 
     </tr>
   </table>
