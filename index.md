@@ -1,20 +1,26 @@
-<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+workin on it!
 
-## Portfolio
+### Education
+<br><br>
+<img style="float: left;" src="images/polito.png?raw=true" width="30" height="30"/> &nbsp;&nbsp; Sep 2019 - present: **Polytechnic University of Turin** <br>
+&nbsp;&nbsp; MSc in [Data Science and Engineering](https://didattica.polito.it/pls/portal30/sviluppo.offerta_formativa_2019.vis?p_a_acc=2020&p_sdu=37&p_cds=320)
+<br><br>
+<img style="float: left;" src="images/polito.png?raw=true" width="30" height="30"/> &nbsp;&nbsp; Sep 2016 - July 2019: **Polytechnic University of Turin** <br>
+&nbsp;&nbsp; BSc in Aerospace Engineering,  [Young Talents Project](https://didattica.polito.it/percorso_giovani_talenti/descrizione)
+
+---
+
+### Experience
 
 ---
 
-### Category Name 1 
-
-[Project 1 Title](/sample_page)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+### Projects
 
 ---
-[Project 2 Title](/pdf/sample_presentation.pdf)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
 
----
-[Project 3 Title](http://example.com/)
+### Projects 
+
+[Project 1 Title](/sample_page) <!--- (/pdf/sample_presentation.pdf) (http://example.com/) --->
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
@@ -22,10 +28,6 @@
 ### Category Name 2
 
 - [Project 1 Title](http://example.com/)
-- [Project 2 Title](http://example.com/)
-- [Project 3 Title](http://example.com/)
-- [Project 4 Title](http://example.com/)
-- [Project 5 Title](http://example.com/)
 
 ---
 
