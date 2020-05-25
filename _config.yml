@@ -7,8 +7,8 @@ description: > # your text below (remove <br> elements if you don't need line br
   I'm a MSc Data Science and Engineering student from Polytechnic University of Turin. I'm passionate about computer science and sports.
   <br><br>
   <a href="https://www.linkedin.com/in/roberto-franceschi/">View My Profile</a> 
-  <a href="https://www.linkedin.com/in/roberto-franceschi/"> <i class="fa fa-linkedin" aria-hidden="true"></i></a>
-  
+  <a href="https://www.linkedin.com/in/roberto-franceschi/"> <i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a>
+  <a href="https://github.com/robertofranceschi"> <i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
   <i class="fa fa-camera-retro"></i> fa-camera-retro
   
 theme: jekyll-theme-minimal
