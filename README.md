@@ -1,4 +1,4 @@
-## Developer Portfolio Landing Page Template
+## Personal Portfolio
 
 ### Introduction
 
