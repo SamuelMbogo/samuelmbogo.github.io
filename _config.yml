@@ -6,7 +6,7 @@ description: > # your text below (remove <br> elements if you don't need line br
   <br><br>
   I'm a MSc Data Science and Engineering student from Polytechnic University of Turin. I'm passionate about computer science and sports.
   <br>
-  <table>
+  <table style="border-color: #FFF">
     <tr style="text-align: center;">
       <td style="text-align: right;"><a href="https://www.linkedin.com/in/roberto-franceschi/"> <i class="fa fa-linkedin fa-2x" style="color:#0e76a8;" aria-hidden="true"></i></a></td>
       <td style="text-align: left;"><a href="https://github.com/robertofranceschi"> <i class="fa fa-github fa-2x" style="color:#24292e;" aria-hidden="true"></i></a></td> 
