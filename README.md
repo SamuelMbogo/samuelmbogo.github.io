@@ -1,6 +1,6 @@
 ## Personal website
 
-See [preview](https://www.robertofranceschi.github.io)
+See [preview](https://robertofranceschi.github.io/).
 
 
 ### Markdown
