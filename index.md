@@ -22,4 +22,4 @@ workin on it!
 ---
 
 <!-- Remove link if you don't want to attibute -->
-<p style="font-size:11px">Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a> | Page template forked from <a href="https://github.com/evanca/quick-portfolio">evanca</a></p>
+<p style="font-size:11px">Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a> &mdash; Page template forked from <a href="https://github.com/evanca/quick-portfolio">evanca</a></p>
