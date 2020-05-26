@@ -12,7 +12,7 @@ _workin' on it!_
 
 ### Experience
 - Teaching Assistant,  [Polytechnic University of Turin](https://www.polito.it/), Turin (Italy)
-- Member of National Youth Council, [Italian Athletics Federation (FIDAL)](http://www.fidal.it/), Rome (Italy)
+- Member of National Youth Council, [Italian Athletics Federation (FIDAL)](http://www.fidal.it/content/Young-Leaders-Il-Consiglio-Giovanile/124544?fbclid=IwAR1_E8B3Zj-oOlZgBkv0JsIlgiLcAP2_r-Dho4QEi7ZjXAvqT-eiyPjHR5M), Rome (Italy)
 - IT Demand Manager Intern, [Santander Consumer Bank](https://www.santanderconsumer.it/), Turin (Italy)
 - Lab Assistant, [Polytechnic University of Turin](https://www.polito.it/), Turin (Italy)
 
