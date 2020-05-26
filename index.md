@@ -1,4 +1,4 @@
-_workin' on it!_
+_Just a place to share projects_
 
 ### Education
 
