@@ -11,10 +11,12 @@ _– Just a place to share projects_
 ---
 
 ### Experience
-- **Teaching Assistant**,  [Polytechnic University of Turin](https://www.polito.it/), Turin (Italy)
+- [Polytechnic University of Turin](https://www.polito.it/), Turin (Italy)
+  + **Teaching Assistant** for the [Object-Oriented Programming](https://didattica.polito.it/pls/portal30/gap.pkg_guide.viewGap?p_cod_ins=04JEYOA&p_a_acc=2020&p_header=S&p_lang=IT) course
+  + **Lab Assistant** at [LaDiSpe](http://www.ladispe.polito.it/news/)
 - **Member of National Youth Council**, [Italian Athletics Federation (FIDAL)](http://www.fidal.it/content/Young-Leaders-Il-Consiglio-Giovanile/124544?fbclid=IwAR1_E8B3Zj-oOlZgBkv0JsIlgiLcAP2_r-Dho4QEi7ZjXAvqT-eiyPjHR5M), Rome (Italy)
 - **IT Demand Manager Intern**, [Santander Consumer Bank](https://www.santanderconsumer.it/), Turin (Italy)
-- **Lab Assistant**, [Polytechnic University of Turin](https://www.polito.it/), Turin (Italy)
+
 
 ---
 
@@ -22,6 +24,12 @@ _– Just a place to share projects_
 
 <!--- [Project 1 Title](/sample_page)  <!---(/pdf/sample_presentation.pdf) (http://example.com/) 
 <img src="images/dummy_thumbnail.jpg?raw=true"/> --->
+
+---
+
+### Awards 
+
+2019: Merit-based Scolarship "Vittorio Geuna", [Comune di Chieri](https://www.comune.chieri.to.it/scuola-istruzione/borse-studio-geuna)
 
 ---
 
