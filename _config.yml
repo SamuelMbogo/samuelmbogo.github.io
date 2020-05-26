@@ -2,7 +2,7 @@ title: Roberto Franceschi # your name (or website title) here
 logo: "/images/profile_photo_cropped.jpg?raw=true" # your photo (or logo) here
 description: > # your text below (remove <br> elements if you don't need line breaks)
   <br>
-  _Aspiring Data Scientist_ &#x1F4CA &#x1F680
+  Aspiring Data Scientist &#x1F4CA &#x1F680
   <br><br>
   I'm a MSc Data Science and Engineering student from Polytechnic University of Turin. I'm passionate about computer science and sports.
   <br>
@@ -10,8 +10,8 @@ description: > # your text below (remove <br> elements if you don't need line br
     <tr style="text-align: center;">
       <td style="text-align: center; border-color: #FFF;"> </td>
       <td style="text-align: center; border-color: #FFF;"> </td>
-      <td style="text-align: center; border-color: #FFF;"><a href="https://www.linkedin.com/in/roberto-franceschi/" target="_blank"> <i class="fa fa-linkedin fa-2x" style="color:#0e76a8;" aria-hidden="true"></i></a></td>
-      <td style="text-align: center; border-color: #FFF;""><a href="https://github.com/robertofranceschi" target="_blank"> <i class="fa fa-github fa-2x" style="color:#24292e;" aria-hidden="true"></i></a></td> 
+      <td style="text-align: right; border-color: #FFF;"> <a href="https://www.linkedin.com/in/roberto-franceschi/" target="_blank"> <i class="fa fa-linkedin fa-2x" style="color:#0e76a8;" aria-hidden="true"></i></a></td>
+      <td style="text-align: left; border-color: #FFF;"> <a href="https://github.com/robertofranceschi" target="_blank"> <i class="fa fa-github fa-2x" style="color:#24292e;" aria-hidden="true"></i></a></td> 
       <td style="text-align: center; border-color: #FFF;"> </td>
       <td style="text-align: center; border-color: #FFF;"> </td>
     </tr>
