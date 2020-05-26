@@ -8,11 +8,12 @@ description: > # your text below (remove <br> elements if you don't need line br
   <br>
   <table style="border-color: #FFF!important;">
     <tr style="text-align: center;">
-      <td> </td>
-      <td style="text-align: right; border-color: #FFF;"><a href="https://www.linkedin.com/in/roberto-franceschi/" target="_blank"> <i class="fa fa-linkedin fa-2x" style="color:#0e76a8;" aria-hidden="true"></i></a></td>
-      <td> </td>
-      <td style="text-align: left; border-color: #FFF;""><a href="https://github.com/robertofranceschi" target="_blank"> <i class="fa fa-github fa-2x" style="color:#24292e;" aria-hidden="true"></i></a></td> 
-      <td> </td>
+      <td style="text-align: center; border-color: #FFF;"> </td>
+      <td style="text-align: center; border-color: #FFF;"> </td>
+      <td style="text-align: center; border-color: #FFF;"><a href="https://www.linkedin.com/in/roberto-franceschi/" target="_blank"> <i class="fa fa-linkedin fa-2x" style="color:#0e76a8;" aria-hidden="true"></i></a></td>
+      <td style="text-align: center; border-color: #FFF;""><a href="https://github.com/robertofranceschi" target="_blank"> <i class="fa fa-github fa-2x" style="color:#24292e;" aria-hidden="true"></i></a></td> 
+      <td style="text-align: center; border-color: #FFF;"> </td>
+      <td style="text-align: center; border-color: #FFF;"> </td>
     </tr>
   </table>
   <br><br>
