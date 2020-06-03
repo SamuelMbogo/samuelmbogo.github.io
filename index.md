@@ -44,7 +44,8 @@ _other projects will be available soon_
 - Sport Technologist, [Eracle Academy](https://www.eracleacademy.com/#team) · Sept 2017 – Mar 2019
 - Event co-organizer, [Jump Experience](http://jumpexperience.weebly.com/) (International High Jump Meeting) · Sept 2015, Sept 2017
 - [Former Track&Field athlete](https://atletica.me/atleta/Roberto-Franceschi/148387), national finalist in 400m · 2013 – 2017
-&#x1F3C3
+<!-- &#x1F3C3 -->
+
 ---
 <!-- Remove link if you don't want to attibute -->
 <p style="font-size:11px">Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a> &mdash; Page template forked from <a href="https://github.com/evanca/quick-portfolio" target="_blank">evanca</a></p>
