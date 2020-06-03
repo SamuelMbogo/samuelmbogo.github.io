@@ -21,8 +21,8 @@ _– Just a portfolio to share projects_
 ---
 
 ### Projects 
+_other projects available soon_
 
-- _other projects available soon_
 - [Sentiment Analysis on Tripadvisor reviews](https://github.com/robertofranceschi/Sentiment-Analysis-on-Tripadvisor-reviews)
 - [Examination Timetabling Problem](https://github.com/robertofranceschi/Examination-Timetabling-Problem)
 
