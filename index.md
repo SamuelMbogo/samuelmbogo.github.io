@@ -33,7 +33,7 @@ _other projects available soon_
 
 ### Awards 
 
-- 2019: Merit-based Scolarship "Vittorio Geuna", [Comune di Chieri](https://www.comune.chieri.to.it/scuola-istruzione/borse-studio-geuna)
+- 2019: Merit-based Scolarship "Vittorio Geuna", [Municipality of Chieri](https://www.comune.chieri.to.it/scuola-istruzione/borse-studio-geuna) 
 
 ---
 
