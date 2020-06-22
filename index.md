@@ -28,7 +28,8 @@ _other projects will be available soon_
 
 <!--- [Project 1 Title](/sample_page)  <!---(/pdf/sample_presentation.pdf) (http://example.com/) 
 <img src="images/dummy_thumbnail.jpg?raw=true"/> --->
-
+[Incremental Learning on Image Recognition](https://github.com/gabrieletiboni/Incremental-learning-on-image-recognition)
+<img src="images/dummy_thumbnail.jpg?raw=true"/>
 ---
 
 ### Awards 
