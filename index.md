@@ -1,4 +1,4 @@
-_– Just a portfolio to share projects_
+_– Just a place to share projects_
 
 ### Education
 
@@ -21,15 +21,23 @@ _– Just a portfolio to share projects_
 ---
 
 ### Projects 
-_other projects will be available soon_
-
-- [Sentiment Analysis on Tripadvisor reviews](https://github.com/robertofranceschi/Sentiment-Analysis-on-Tripadvisor-reviews)
-- [Examination Timetabling Problem](https://github.com/robertofranceschi/Examination-Timetabling-Problem)
+---
 
 <!--- [Project 1 Title](/sample_page)  <!---(/pdf/sample_presentation.pdf) (http://example.com/) 
 <img src="images/dummy_thumbnail.jpg?raw=true"/> --->
 [Incremental Learning on Image Recognition](https://github.com/gabrieletiboni/Incremental-learning-on-image-recognition)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+<img src="images/incremental-learning.png?raw=true"/>
+
+---
+
+[Domain Adaptation on PACS dataset](https://github.com/robertofranceschi/Domain-adaptation-on-PACS-dataset)
+<img src="images/dann.png?raw=true"/>
+
+---
+
+- [Sentiment Analysis on Tripadvisor reviews](https://github.com/robertofranceschi/Sentiment-Analysis-on-Tripadvisor-reviews)
+- [Examination Timetabling Problem](https://github.com/robertofranceschi/Examination-Timetabling-Problem)
+
 ---
 
 ### Awards 
