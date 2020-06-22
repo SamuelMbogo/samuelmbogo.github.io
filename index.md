@@ -36,6 +36,7 @@ _– Just a place to share projects_
 ---
 
 - [Sentiment Analysis on Tripadvisor reviews](https://github.com/robertofranceschi/Sentiment-Analysis-on-Tripadvisor-reviews)
+- [Classification on Wine Dataset](https://github.com/robertofranceschi/Classification-on-Wine-dataset)
 - [Examination Timetabling Problem](https://github.com/robertofranceschi/Examination-Timetabling-Problem)
 
 ---
