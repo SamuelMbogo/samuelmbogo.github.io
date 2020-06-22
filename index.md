@@ -52,7 +52,7 @@ _– Just a place to share projects_
 - Jury Member of [runHACK](https://tree.it/runhack/) organized by Italian Athletic Federation · 20-21 September 2019
 - National Delegate for [European Athletics Young Leaders Forum Berlin](https://www.european-athletics.org/athletics-community/young-leaders/index.html#:~:text=In%202018%2C%20the%20sixth%20edition,Paris%202020%20European%20Athletics%20Championships.) · August 2018
 - Sport Technologist, [Eracle Academy](https://www.eracleacademy.com/#team) · Sept 2017 – Mar 2019
-- Event co-organizer, [Jump Experience](http://jumpexperience.weebly.com/) (International High Jump Meeting) · Sept 2015, Sept 2017
+- Event co-organizer, [Jump Experience](http://en-jumpexperience.weebly.com/) (International High Jump Meeting) · Sept 2015, Sept 2017
 - [Former Track&Field athlete](https://atletica.me/atleta/Roberto-Franceschi/148387), national finalist in 400m · 2013 – 2017
 <!-- &#x1F3C3 -->
 
