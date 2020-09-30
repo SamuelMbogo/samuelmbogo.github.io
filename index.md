@@ -19,7 +19,7 @@ _– Just a place to share projects (still updating)_
 
 
 ---
-
+<a id='projects'></a>
 ### Projects 
 ---
 
