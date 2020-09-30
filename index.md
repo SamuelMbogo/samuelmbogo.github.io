@@ -1,4 +1,4 @@
-_– Just a place to share projects_
+_– Just a place to share projects (still updating)_
 
 ### Education
 
