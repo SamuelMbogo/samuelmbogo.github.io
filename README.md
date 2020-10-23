@@ -1,6 +1,6 @@
 ## Portfolio
 
-See [preview](https://robertofranceschi.github.io/).
+See [website](https://robertofranceschi.github.io/).
 
 #### References
 
