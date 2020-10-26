@@ -35,7 +35,7 @@ _– Just a place to share projects (still updating)_
 
 ---
 
-- [Image classification on Caltech101 using CNNs](https://github.com/robertofranceschi/Image-classification-on-Caltech101-using-CNNs)
+- [Transfer Learning using CNNs](https://github.com/robertofranceschi/Image-classification-on-Caltech101-using-CNNs)
 - [Sentiment Analysis on Tripadvisor reviews](https://github.com/robertofranceschi/Sentiment-Analysis-on-Tripadvisor-reviews)
 - [Classification on Wine Dataset](https://github.com/robertofranceschi/Classification-on-Wine-dataset)
 - [Examination Timetabling Problem](https://github.com/robertofranceschi/Examination-Timetabling-Problem)
