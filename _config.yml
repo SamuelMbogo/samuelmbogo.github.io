@@ -1,17 +1,17 @@
-title: Roberto Franceschi # your name (or website title) here
-logo: "/images/profile_photo_cropped.jpg?raw=true" # your photo (or logo) here
+title: Samuel Mbogo # your name (or website title) here
+logo: "/images/20201210_135516.jpg" # your photo (or logo) here
 description: > # your text below (remove <br> elements if you don't need line breaks)
   <br>
-  Aspiring Data Scientist &#x1F4CA &#x1F680
+  Aspiring Business Analyst
   <br><br>
-  I'm a Data Science and Engineering student from Polytechnic University of Turin. I'm passionate about data, computer science and sports. 
+  I'm a Finance and Accounting graduate from the University of Nairobi. I'm passionate about data analysis, specifically drawing insights from financial data.
   <br>
   <table style="border-color: #FFF!important;">
     <tr style="text-align: center;">
       <td style="text-align: center; border-color: #FFF;"> </td>
       <td style="text-align: center; border-color: #FFF;"> </td>
-      <td style="text-align: right; border-color: #FFF;"> <a href="https://www.linkedin.com/in/roberto-franceschi/" target="_blank"> <i class="fa fa-linkedin fa-2x" style="color:#0e76a8;" aria-hidden="true"></i></a></td>
-      <td style="text-align: left; border-color: #FFF;"> <a href="https://github.com/robertofranceschi" target="_blank"> <i class="fa fa-github fa-2x" style="color:#24292e;" aria-hidden="true"></i></a></td> 
+      <td style="text-align: right; border-color: #FFF;"> <a href="https://www.linkedin.com/in/samuel-mbogo/" target="_blank"> <i class="fa fa-linkedin fa-2x" style="color:#0e76a8;" aria-hidden="true"></i></a></td>
+      <td style="text-align: left; border-color: #FFF;"> <a href="https://github.com/SamuelMbogo" target="_blank"> <i class="fa fa-github fa-2x" style="color:#24292e;" aria-hidden="true"></i></a></td> 
       <td style="text-align: center; border-color: #FFF;"> </td>
       <td style="text-align: center; border-color: #FFF;"> </td>
     </tr>
@@ -19,4 +19,4 @@ description: > # your text below (remove <br> elements if you don't need line br
   <br><br>
   
 theme: jekyll-theme-minimal
-google_analytics: UA-111926186-2 # your Google Analytics tracking ID here
+google_analytics: G-G6QP987ZJN # your Google Analytics tracking ID here
