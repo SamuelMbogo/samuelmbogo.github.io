@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Bankability Problem — Samuel Mbogo</title>
+  <meta name="description" content="An interactive look at why Kenya's water utilities struggle to access commercial finance, built on WASREB and NAWASIP data.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* ---- page-specific ---- */
+    .lede {
+      max-width: 680px;
+      font-size: 1.15rem;
+      color: var(--ink-soft);
+      margin: 0 0 1.5rem;
+    }
+    .bigstat-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+      margin: 3rem 0 1rem;
+      padding: 2rem 0;
+      border-top: 1px solid var(--divider);
+      border-bottom: 1px solid var(--divider);
+    }
+    .bigstat { flex: 1; min-width: 150px; }
+    .bigstat-num {
+      font-family: var(--serif);
+      font-size: 2.8rem;
+      line-height: 1;
+      color: var(--accent);
+      margin: 0 0 0.35rem;
+    }
+    .bigstat-label {
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    /* ---- the interactive tool ---- */
+    .tool {
+      margin: 3rem 0;
+      padding: 2.5rem;
+      background: var(--bg-alt);
+      border: 1px solid var(--divider);
+    }
+    .tool-eyebrow {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      margin: 0 0 0.6rem;
+      font-weight: 600;
+    }
+    .tool-title {
+      font-family: var(--serif);
+      font-size: 1.9rem;
+      line-height: 1.15;
+      margin: 0 0 0.6rem;
+      color: var(--ink);
+    }
+    .tool-intro {
+      font-size: 0.98rem;
+      color: var(--ink-soft);
+      max-width: 560px;
+      margin: 0 0 2rem;
+    }
+    .tool-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+    @media (max-width: 640px) {
+      .tool { padding: 1.5rem; }
+      .tool-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+
+    /* sliders */
+    .control { margin-bottom: 1.75rem; }
+    .control-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.5rem;
+    }
+    .control-label {
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--ink);
+    }
+    .control-value {
+      font-family: var(--mono);
+      font-size: 1.15rem;
+      color: var(--accent);
+      font-weight: 500;
+    }
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 4px;
+      background: var(--divider);
+      outline: none;
+      border-radius: 2px;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--accent);
+      cursor: pointer;
+      border: 3px solid var(--bg-alt);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    }
+    input[type="range"]::-moz-range-thumb {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--accent);
+      cursor: pointer;
+      border: 3px solid var(--bg-alt);
+    }
+    .control-scale {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--sage);
+      margin-top: 0.4rem;
+    }
+    .control-note {
+      font-size: 0.78rem;
+      color: var(--sage);
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+
+    /* gauge + verdict */
+    .gauge-wrap { text-align: center; }
+    .gauge-figure {
+      font-family: var(--serif);
+      font-size: 3.6rem;
+      line-height: 1;
+      color: var(--ink);
+      margin: 0.5rem 0 0.2rem;
+    }
+    .gauge-caption {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      color: var(--ink-soft);
+      letter-spacing: 0.02em;
+      margin: 0 0 1.25rem;
+    }
+    .verdict {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 0.55rem 1.1rem;
+      border-radius: 2px;
+      letter-spacing: 0.01em;
+    }
+    .verdict-sub {
+      display: block;
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      font-weight: 400;
+      color: var(--ink-soft);
+      margin-top: 0.9rem;
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.45;
+    }
+    .preset-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.5rem;
+    }
+    .preset {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      padding: 0.4rem 0.85rem;
+      background: transparent;
+      border: 1px solid var(--divider);
+      color: var(--ink-soft);
+      cursor: pointer;
+      border-radius: 2px;
+      transition: border-color 120ms, color 120ms;
+    }
+    .preset:hover { border-color: var(--accent); color: var(--accent); }
+
+    .tool-source {
+      font-size: 0.78rem;
+      color: var(--sage);
+      margin-top: 2rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--divider);
+      line-height: 1.5;
+    }
+    .formula {
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      background: var(--bg);
+      padding: 0.9rem 1rem;
+      border-left: 2px solid var(--accent);
+      color: var(--ink-soft);
+      margin: 1.25rem 0 0;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-brand">Samuel Mbogo</a>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../what-i-do.html">What I Do</a>
+      <a href="../work.html">Selected Work</a>
+      <a href="../insights.html" class="current">Insights</a>
+      <a href="../services.html">Services</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
+<main>
+<div class="read">
+  <a href="../insights.html" class="back-link">← Insights</a>
+
+  <p class="page-eyebrow">Interactive · Kenya water finance</p>
+  <h1 style="font-size:2.9rem; line-height:1.1; margin-bottom:1rem;">The Bankability Problem</h1>
+  <p class="lede">
+    Kenya needs <span class="fig">KES 995 billion</span> to reach its 2030 water and sanitation goals.
+    On a business-as-usual path, roughly <span class="fig">KES 71 billion</span> of that has no identified
+    source. The reason isn't only a shortage of capital. It's that most of the utilities that would receive
+    it can't yet carry debt. This is the problem I work on. Move the sliders below and you can see why.
+  </p>
+
+  <div class="bigstat-row">
+    <div class="bigstat">
+      <p class="bigstat-num">98%</p>
+      <p class="bigstat-label">Average operating cost coverage across Kenya's 95 regulated utilities. Sustainability needs <span class="fig">110%</span>.</p>
+    </div>
+    <div class="bigstat">
+      <p class="bigstat-num">44%</p>
+      <p class="bigstat-label">Sector non-revenue water: water produced but never billed. The regulator's benchmark is <span class="fig">25%</span>.</p>
+    </div>
+    <div class="bigstat">
+      <p class="bigstat-num">225.7bn</p>
+      <p class="bigstat-label">Estimated sector debt in Kenyan shillings, owed by utilities to the agencies that built their infrastructure.</p>
+    </div>
+  </div>
+
+  <!-- ============ THE TOOL ============ -->
+  <div class="tool">
+    <p class="tool-eyebrow">Interactive</p>
+    <h2 class="tool-title">Is this utility bankable?</h2>
+    <p class="tool-intro">
+      Two operational numbers do most of the work in deciding whether a water utility can service a loan:
+      how much of its water it actually bills for, and how much of what it bills it actually collects.
+      Start position is the current Kenyan sector average.
+    </p>
+
+    <div class="tool-grid">
+      <!-- controls -->
+      <div>
+        <div class="control">
+          <div class="control-head">
+            <span class="control-label">Non-revenue water</span>
+            <span class="control-value"><span id="nrwVal">44</span>%</span>
+          </div>
+          <input type="range" id="nrw" min="15" max="70" value="44" step="1">
+          <div class="control-scale"><span>15%</span><span>benchmark 25%</span><span>70%</span></div>
+          <p class="control-note">Water produced but lost to leaks, theft, or bad metering before it can be billed.</p>
+        </div>
+
+        <div class="control">
+          <div class="control-head">
+            <span class="control-label">Revenue collection efficiency</span>
+            <span class="control-value"><span id="colVal">88</span>%</span>
+          </div>
+          <input type="range" id="col" min="50" max="100" value="88" step="1">
+          <div class="control-scale"><span>50%</span><span></span><span>100%</span></div>
+          <p class="control-note">Share of billed revenue the utility actually collects from customers.</p>
+        </div>
+
+        <div class="preset-row">
+          <button class="preset" data-nrw="44" data-col="88">Sector average</button>
+          <button class="preset" data-nrw="25" data-col="95">Regulator benchmark</button>
+          <button class="preset" data-nrw="58" data-col="72">Distressed utility</button>
+        </div>
+      </div>
+
+      <!-- gauge + verdict -->
+      <div class="gauge-wrap">
+        <svg id="gauge" viewBox="0 0 200 120" width="220" height="132" role="img" aria-label="Operating cost coverage gauge">
+          <!-- track -->
+          <path d="M 20 110 A 80 80 0 0 1 180 110" fill="none" stroke="#D9D3C6" stroke-width="14" stroke-linecap="round"/>
+          <!-- value arc (set by JS; pre-rendered at 98%) -->
+          <path id="gaugeArc" d="" fill="none" stroke="#4A7C74" stroke-width="14" stroke-linecap="round"/>
+          <!-- benchmark tick at 110% -->
+          <line id="benchTick" x1="0" y1="0" x2="0" y2="0" stroke="#23201C" stroke-width="2"/>
+        </svg>
+        <p class="gauge-figure"><span id="ccVal">98</span>%</p>
+        <p class="gauge-caption">Operating cost coverage</p>
+        <span class="verdict" id="verdict" style="background:#C99A46;color:#F0EDE5;">Marginal — below the sustainability line</span>
+        <span class="verdict-sub" id="verdictSub">The utility nearly covers its running costs but falls short of the 110% needed to be sustainable. This is roughly where the Kenyan sector average sits, and why so little commercial capital reaches it.</span>
+      </div>
+    </div>
+
+    <p class="formula" id="formula">coverage = 98 + 1.7 &times; (44 − NRW) + 1.0 &times; (collection − 88)</p>
+
+    <p class="tool-source">
+      Sector figures from WASREB's <em>Impact Report 17</em> (FY 2023/24) and Kenya's NAWASIP investment plan.
+      The coverage model is a deliberately transparent, first-order approximation, calibrated so the sector
+      average inputs reproduce the sector's real <span class="fig">98%</span> cost coverage and the regulator's
+      efficiency targets move it toward sustainability. It is an illustration of the mechanism, not a substitute
+      for a full utility financial model.
+    </p>
+  </div>
+  <!-- ============ /THE TOOL ============ -->
+
+  <div class="piece-body" style="margin-top:2.5rem;">
+    <p>
+      What you just did is, in miniature, the first thing I do when a water project lands on my desk for review.
+      An applicant arrives with a financial model that shows the utility comfortably servicing the loan it's
+      asking for. That model is built on assumptions: a metering ratio, a collection rate, a non-revenue-water
+      figure. My job is to ask whether those assumptions match what the utility has actually delivered.
+    </p>
+    <p>
+      Kenya is unusually well set up for that question, because the regulator publishes the answer. WASREB's
+      annual Impact Report scores every licensed utility on the same nine indicators, including the two you just
+      moved. Three years of those reports read together give a trajectory that exists independently of anything
+      the applicant has told me, in a form the applicant can't dispute.
+    </p>
+    <p>
+      The gap between the two positions on that gauge, where an applicant's projections sit versus where the
+      regulator's data sits, is usually the difference between a bankable transaction and one that will quietly
+      require concessional subsidy at every debt-service point. Finding that gap early is what protects scarce
+      concessional capital from being deployed against numbers that were never going to hold.
+    </p>
+  </div>
+
+  <div class="btn-row" style="margin-top:2.5rem;">
+    <a href="wasreb-cross-check.html" class="btn btn-ghost">Read the full method</a>
+    <a href="../contact.html" class="btn btn-ghost">Get in touch</a>
+  </div>
+</div>
+</main>
+<footer>
+  Samuel Thongoro Mbogo · Nairobi, Kenya · <a href="mailto:officialsammbogo@gmail.com">officialsammbogo@gmail.com</a>
+</footer>
+
+<script>
+(function () {
+  var nrwEl = document.getElementById('nrw');
+  var colEl = document.getElementById('col');
+  var nrwVal = document.getElementById('nrwVal');
+  var colVal = document.getElementById('colVal');
+  var ccVal = document.getElementById('ccVal');
+  var arc = document.getElementById('gaugeArc');
+  var benchTick = document.getElementById('benchTick');
+  var verdict = document.getElementById('verdict');
+  var verdictSub = document.getElementById('verdictSub');
+
+  // gauge geometry
+  var CX = 100, CY = 110, R = 80;
+  var GAUGE_MAX = 160; // % coverage that fills the whole arc
+
+  function polar(pct) {
+    // pct 0..1 across the semicircle, left(180deg) -> right(0deg)
+    var ang = Math.PI * (1 - pct);
+    return { x: CX + R * Math.cos(ang), y: CY - R * Math.sin(ang) };
+  }
+
+  function arcPath(fromPct, toPct) {
+    // semicircular gauge: any sub-arc spans <= 180deg, so large-arc-flag is always 0
+    var a = polar(fromPct), b = polar(toPct);
+    return 'M ' + a.x.toFixed(2) + ' ' + a.y.toFixed(2) +
+           ' A ' + R + ' ' + R + ' 0 0 1 ' +
+           b.x.toFixed(2) + ' ' + b.y.toFixed(2);
+  }
+
+  function color(cc) {
+    if (cc >= 130) return '#4A7C74';   // bankable — verdigris
+    if (cc >= 110) return '#5E8C6A';    // sustainable — green
+    if (cc >= 100) return '#B0872F';    // O&M breakeven — ochre
+    if (cc >= 88)  return '#C99A46';    // marginal — amber
+    return '#A3542E';                    // sub-viable — burnt
+  }
+
+  function verdictText(cc) {
+    if (cc >= 130) return ['Commercially bankable', 'The utility generates a real surplus over running costs. On these numbers it could service debt on close-to-commercial terms, the position a lender needs to see.'];
+    if (cc >= 110) return ['Sustainable — investment-ready', 'The utility covers its costs with margin to spare. It is a credible candidate for blended or concessional finance, with commercial debt reachable over time.'];
+    if (cc >= 100) return ['Covers O&M, not yet bankable', 'The utility breaks even on running costs but has little left to service debt. It needs efficiency gains or concessional support before commercial lenders will engage.'];
+    if (cc >= 88)  return ['Marginal — below the sustainability line', 'The utility nearly covers its running costs but falls short of the 110% needed to be sustainable. This is roughly where the Kenyan sector average sits, and why so little commercial capital reaches it.'];
+    return ['Sub-viable — requires subsidy', 'The utility cannot cover its own operating costs. Any capital deployed here is effectively a grant unless the operational numbers move first.'];
+  }
+
+  function update() {
+    var nrw = +nrwEl.value;
+    var col = +colEl.value;
+    var cc = Math.round(98 + 1.7 * (44 - nrw) + 1.0 * (col - 88));
+    if (cc < 0) cc = 0;
+
+    nrwVal.textContent = nrw;
+    colVal.textContent = col;
+    ccVal.textContent = cc;
+
+    var pct = Math.max(0, Math.min(1, cc / GAUGE_MAX));
+    arc.setAttribute('d', arcPath(0, pct === 0 ? 0.001 : pct));
+    arc.setAttribute('stroke', color(cc));
+
+    // benchmark tick at 110%
+    var bPct = 110 / GAUGE_MAX;
+    var inner = { x: CX + (R - 10) * Math.cos(Math.PI * (1 - bPct)), y: CY - (R - 10) * Math.sin(Math.PI * (1 - bPct)) };
+    var outer = { x: CX + (R + 10) * Math.cos(Math.PI * (1 - bPct)), y: CY - (R + 10) * Math.sin(Math.PI * (1 - bPct)) };
+    benchTick.setAttribute('x1', inner.x.toFixed(2));
+    benchTick.setAttribute('y1', inner.y.toFixed(2));
+    benchTick.setAttribute('x2', outer.x.toFixed(2));
+    benchTick.setAttribute('y2', outer.y.toFixed(2));
+
+    var v = verdictText(cc);
+    verdict.textContent = v[0];
+    verdict.style.background = color(cc);
+    verdict.style.color = '#F0EDE5';
+    verdictSub.textContent = v[1];
+  }
+
+  nrwEl.addEventListener('input', update);
+  colEl.addEventListener('input', update);
+
+  var presets = document.querySelectorAll('.preset');
+  for (var i = 0; i < presets.length; i++) {
+    presets[i].addEventListener('click', function () {
+      nrwEl.value = this.getAttribute('data-nrw');
+      colEl.value = this.getAttribute('data-col');
+      update();
+    });
+  }
+
+  update();
+})();
+</script>
+</body>
+</html>
