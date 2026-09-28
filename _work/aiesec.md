@@ -6,7 +6,7 @@ period: 2021 to 2022
 focus: Earlier roles
 sector: Student leadership
 featured: false
-order: 23
+order: 22
 ---
 
 I led a committee across recruitment, marketing and logistics for an international volunteer exchange programme, tracking performance against targets and coordinating placements with partner AIESEC chapters worldwide through a pandemic year. I also served as Vice President for Business Development and Partnerships for an election conference and a tree-planting event.

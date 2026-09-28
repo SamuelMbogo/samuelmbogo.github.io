@@ -6,7 +6,7 @@ period: 2020
 focus: Earlier roles
 sector: Real estate
 featured: false
-order: 22
+order: 23
 ---
 
 I processed more than a hundred invoices a month, billed residents, and maintained property-level P&L, prepayment and accrual schedules for a student accommodation portfolio. I also tracked construction capex on green-certified developments financed through a green bond that a development finance guarantee had lifted above Kenya's sovereign rating.
