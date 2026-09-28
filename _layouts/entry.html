@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<article class="entry wrap-narrow">
+  <p class="eyebrow">{% if page.collection == "work" %}Selected Work{% else %}Insight{% endif %}</p>
+  <h1>{{ page.title }}</h1>
+  {% if page.summary %}<p class="lede">{{ page.summary }}</p>{% endif %}
+  <dl class="meta">
+    {% if page.collection == "insights" and page.date %}<div><dt>Published</dt><dd>{{ page.date | date: "%-d %B %Y" }}</dd></div>{% endif %}
+    {% if page.role %}<div><dt>Role</dt><dd>{{ page.role }}</dd></div>{% endif %}
+    {% if page.period %}<div><dt>Period</dt><dd>{{ page.period }}</dd></div>{% endif %}
+    {% if page.focus %}<div><dt>Focus area</dt><dd>{{ page.focus }}</dd></div>{% endif %}
+    {% if page.sector %}<div><dt>Sector</dt><dd>{{ page.sector }}</dd></div>{% endif %}
+  </dl>
+  <div class="prose">
+    {{ content }}
+  </div>
+  <p class="back">
+    {% if page.collection == "work" %}<a href="{{ '/work/' | relative_url }}">Back to all work</a>{% else %}<a href="{{ '/insights/' | relative_url }}">Back to all insights</a>{% endif %}
+  </p>
+</article>
