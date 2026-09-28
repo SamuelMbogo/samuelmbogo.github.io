@@ -1,113 +1,103 @@
 # samuelmbogo.github.io
 
-Personal site for Samuel Mbogo — Investment Analyst, blended finance & water infrastructure.
-Built as a plain HTML/CSS site with no framework or build step.
+Personal website of Samuel Mbogo, investment analyst, Nairobi. Built with Jekyll and served by GitHub Pages from the `main` branch. Live at https://samuelmbogo.github.io.
 
-## What's in this repo
+## Structure
 
 ```
-index.html            Home
-about.html            About + photo + CV downloads
-what-i-do.html        Six competency blocks
-work.html             Five selected project cards
-insights.html         Landing page for insights pieces
-services.html         Five advisory service offerings
-contact.html          Contact details + CV downloads
-insights/             Individual insights pieces
-  wasreb-cross-check.html
-  moic-over-irr.html
-  fund-structure.html
-styles.css            Shared stylesheet
-favicon.svg           Site favicon
+_config.yml          Site settings: name, headline, email, LinkedIn, collections
+_data/
+  navigation.yml     The menu (edit here to rename or reorder menu items)
+_includes/
+  header.html        Top bar and menu, shared by every page
+  footer.html        Footer, shared by every page
+_layouts/
+  default.html       The page shell: fonts, stylesheet, link-preview tags
+  entry.html         Template for case studies and insights
+_work/               One Markdown file per case study
+_insights/           One Markdown file per article
+tools/               Interactive tools, one HTML file each
 assets/
-  sam-mbogo.jpeg      About page photo
+  css/main.css       The whole visual design
+  img/               Photo
 cv/
-  samuel-mbogo-cv-master.pdf    Full 6-page master CV
-  samuel-mbogo-cv-2page.pdf     Trimmed 2-page application CV
+  samuel-mbogo-master-cv.pdf
+index.html           Home
+about.html           About
+focus-areas.html     Focus Areas
+work.html            Work index (builds itself from _work)
+insights.html        Insights index (builds itself from _insights)
+tools.html           Tools index
+contact.html         Contact
 ```
 
-## Deploying to GitHub Pages (10 minutes, first time)
+## Adding a case study
 
-**Step 1 — Create the repository**
+Create `_work/short-name.md`. The file name becomes the address, for example `/work/short-name/`.
 
-Go to github.com/new (make sure you're signed in as SamuelMbogo).
+```
+---
+title: A clear, plain title
+summary: One sentence shown on the Work page and on Home.
+role: Role, Organisation
+period: 2026
+focus: Project and infrastructure finance
+sector: Sector name
+featured: false
+order: 25
+---
 
-- Repository name: **`samuelmbogo.github.io`** (this exact name matters — it's what makes the site live at samuelmbogo.github.io)
-- Description: "Personal site"
-- Public
-- Do NOT initialize with a README (we already have files)
-- Click "Create repository"
+Opening paragraph on why the problem matters.
 
-**Step 2 — Upload the files**
+Paragraph on the client, described without identifying them.
 
-On the new empty repo page, click the "uploading an existing file" link (or click "Add file" → "Upload files").
+A one-line bridge: what my role was.
 
-Drag every file and folder from this site folder into the upload area:
-- All the `.html` files
-- The `styles.css` file
-- The `favicon.svg` file
-- The `assets/` folder (with the photo inside)
-- The `cv/` folder (with both PDFs inside)
-- The `insights/` folder (with the three pieces inside)
-- This `README.md`
+What I did.
 
-GitHub will accept up to 100 files at once and will preserve the folder structure.
+## What I took from it
 
-Once uploaded, scroll to the bottom, add a commit message like "Initial site", and click "Commit changes".
+One or two sentences.
+```
 
-**Step 3 — Turn on GitHub Pages**
+`focus` must be exactly one of: `Project and infrastructure finance`, `Credit and capital structuring`, `Valuation and exits`, `Advisory and assurance`, `Earlier roles`.
 
-Go to the repo's Settings tab (top right), then Pages (left sidebar).
+## Featuring work
 
-- Source: "Deploy from a branch"
-- Branch: `main` / `(root)`
-- Click Save
+Set `featured: true` on up to six case studies. Featured items appear on Home and at the top of the Work page, ordered by `order` (lowest first). Everything else stays listed under its focus area.
 
-Wait about a minute. The Pages settings page will refresh and show a green banner: "Your site is live at https://samuelmbogo.github.io"
+## Adding an insight
 
-**Step 4 — Confirm it works**
+Create `_insights/short-name.md`:
 
-Visit https://samuelmbogo.github.io. Click through the pages. Try downloading a CV.
+```
+---
+title: The article title
+summary: One sentence.
+date: 2026-10-15
+topic: Credit and capital structuring
+---
 
-If anything doesn't work, common causes:
-- The repo name isn't exactly `samuelmbogo.github.io` (case-sensitive)
-- The `index.html` file isn't at the root (make sure it's not inside a subfolder)
-- You haven't waited long enough — GitHub Pages takes 30–60 seconds on first deploy
+Article text in plain Markdown.
+```
 
-## Updating the site later
+The newest three appear on Home automatically.
 
-Edit any HTML file directly through the GitHub web interface:
+## Updating the CV
 
-1. Go to the repo on github.com
-2. Click on the file you want to edit (e.g. `about.html`)
-3. Click the pencil icon (top right of the file view) to edit
-4. Make your changes
-5. Scroll down, add a commit message, click "Commit changes"
+Export the updated Master CV to PDF, name it exactly `samuel-mbogo-master-cv.pdf`, and drag it onto the `cv` folder to replace the old one. Every link on the site keeps working.
 
-Your changes go live within a minute. No local setup needed.
+## Hiding something without deleting it
 
-## Adding a new insights piece
+Add `published: false` to the top section of any case study or insight. It disappears from the site until the line is removed.
 
-1. Copy one of the existing files in `insights/` as a starting point
-2. Edit the title, dek, byline, and body
-3. Add a new card in `insights.html` that links to it
-4. Commit both files
+## Editing workflow
 
-## Notes on the design
+Open the repository on github.com and press the full-stop key to edit in github.dev. Small edits can go straight to `main`: commit and push, and the site rebuilds in one to three minutes (check the Actions tab for a green tick). For larger changes, create a new branch first, build there, and merge through a pull request once it is ready.
 
-- Palette: warm sand background (#F0EDE5), warm near-black text (#23201C), verdigris accent (#4A7C74)
-- Type: Instrument Serif for display, IBM Plex Sans for body, IBM Plex Mono for figures inline
-- Fonts are loaded from Google Fonts — no local font files needed
-- Fully responsive, works on mobile without any extra setup
-- All figures in prose (dollar amounts, percentages, page counts) are wrapped in `<span class="fig">…</span>` for the monospace treatment
+## Content rules
 
-## Custom domain later (optional, ~$12/year)
-
-If you ever want to move from samuelmbogo.github.io to samuelmbogo.com:
-
-1. Register the domain at any registrar (Namecheap, Cloudflare, Google Domains)
-2. In your repo Settings → Pages, add the custom domain
-3. Point your domain's DNS at GitHub Pages (they'll show you the exact records)
-4. Wait for DNS propagation (a few hours), and GitHub Pages will auto-provision HTTPS
-
-No code changes needed — same repo, same files.
+- No client or counterparty names. Use the project's code name or a general description.
+- Every fact and figure must match the current Master CV.
+- Dates on every case study and article.
+- No italics and no em dashes.
