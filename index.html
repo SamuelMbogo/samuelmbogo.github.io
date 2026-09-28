@@ -1,49 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Samuel Mbogo — Investment Analyst, Blended Finance & Water Infrastructure</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="styles.css">
-  
-</head>
-<body>
-<nav class="nav">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-brand">Samuel Mbogo</a>
-    <div class="nav-links">
-      <a href="index.html" class="current">Home</a>
-      <a href="about.html">About</a>
-      <a href="what-i-do.html">What I Do</a>
-      <a href="work.html">Selected Work</a>
-      <a href="insights.html">Insights</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html">Contact</a>
+---
+title: Home
+permalink: /
+---
+<section class="wrap">
+  <p class="eyebrow">Investment Analyst · Nairobi</p>
+  <h1 class="hero-title">{{ site.tagline }}</h1>
+  <p class="lede">I'm an investment analyst building depth across project finance, credit and valuation. Today that work sits at a Dutch-funded blended finance facility in Nairobi, where I manage the investment pipeline for early-stage water infrastructure. Before that, it was lender-grade models, valuations and due diligence across seven countries.</p>
+  <p>
+    <a class="button primary" href="{{ '/work/' | relative_url }}">See the work</a>
+    <a class="button" href="{{ '/focus-areas/' | relative_url }}">Focus areas</a>
+    <a class="button" href="{{ '/cv/samuel-mbogo-master-cv.pdf' | relative_url }}">Master CV</a>
+  </p>
+</section>
+
+<section class="wrap section">
+  <div class="grid grid-3 proof">
+    <div>
+      <p class="proof-figure num">USD 150M</p>
+      <p class="small">Project finance model built for a twelve-asset-class industrial park, sized to lender coverage ratios.</p>
+    </div>
+    <div>
+      <p class="proof-figure num">14</p>
+      <p class="small">National bulk-water, dam and desalination projects brought into a pipeline through a PPP framework with the national water ministry.</p>
+    </div>
+    <div>
+      <p class="proof-figure num">7</p>
+      <p class="small">Countries of transaction work across East and Southern Africa, the Indian Ocean and Southeast Asia.</p>
     </div>
   </div>
-</nav>
-<main>
-<div class="wide">
-  <p class="page-eyebrow">Investment Analyst · Nairobi</p>
-  <h1 class="hero-tagline">Turning concessional capital<br>into <em>bankable transactions</em>.</h1>
-  <p class="hero-intro">
-    I structure blended and commercial debt for water infrastructure and agribusiness clients across East Africa.
-    Currently at KIFFWA, a blended-finance facility anchored by the Embassy of the Kingdom of the Netherlands,
-    where I lead origination, due diligence, and portfolio work across a growing project pipeline.
-  </p>
-  <div class="btn-row">
-    <a href="about.html" class="btn">About me</a>
-    <a href="interactive/water-utility-bankability.html" class="btn btn-ghost">Try the bankability tool</a>
-    <a href="work.html" class="btn btn-ghost">Selected work</a>
+</section>
+
+<section class="wrap-narrow section">
+  <p class="eyebrow">The craft</p>
+  <h2 class="flush">Judgement is the work.</h2>
+  <p>Models, valuations and credit memos are tools. The craft is judgement: deciding what a project can carry, what a stake is really worth, and when the right answer is no. That judgement travels, from a USD 150 million industrial park to a small water enterprise, and it is what I am building, deal by deal.</p>
+</section>
+
+<section class="wrap section">
+  <p class="eyebrow">Focus areas</p>
+  <div class="grid grid-3">
+    <div class="card">
+      <h3><a class="card-link" href="{{ '/focus-areas/#project-finance' | relative_url }}">Project and infrastructure finance</a></h3>
+      <p>Assets that live on long-term cash flows: water, energy, industrial parks and PPPs.</p>
+    </div>
+    <div class="card">
+      <h3><a class="card-link" href="{{ '/focus-areas/#credit' | relative_url }}">Credit and capital structuring</a></h3>
+      <p>Sizing capital a borrower can carry, from public utilities to corporates to small enterprises.</p>
+    </div>
+    <div class="card">
+      <h3><a class="card-link" href="{{ '/focus-areas/#valuation' | relative_url }}">Valuation and exits</a></h3>
+      <p>What a business or a stake is worth when there is no liquid market, and how the exit gets built.</p>
+    </div>
   </div>
-</div>
-</main>
-<footer>
-  Samuel Thongoro Mbogo · Nairobi, Kenya · <a href="mailto:officialsammbogo@gmail.com">officialsammbogo@gmail.com</a>
-</footer>
-</body>
-</html>
+</section>
+
+<section class="wrap section">
+  <p class="eyebrow">Selected work</p>
+  {% assign featured = site.work | where_exp: "item", "item.featured == true" | sort: "order", "last" %}
+  {% if featured.size > 0 %}
+  <div class="grid grid-3">
+    {% for item in featured limit: 6 %}
+    <div class="card">
+      <h3><a class="card-link" href="{{ item.url | relative_url }}">{{ item.title }}</a></h3>
+      <p>{{ item.summary }}</p>
+      {% if item.focus %}<span class="tag">{{ item.focus }}</span>{% endif %}{% if item.sector %}<span class="tag">{{ item.sector }}</span>{% endif %}
+    </div>
+    {% endfor %}
+  </div>
+  <p><a href="{{ '/work/' | relative_url }}">All work</a></p>
+  {% else %}
+  <p class="small">Case studies are being published. <a href="{{ '/work/' | relative_url }}">See the work index</a>.</p>
+  {% endif %}
+</section>
+
+<section class="wrap section">
+  <div class="grid grid-2">
+    <div>
+      <p class="eyebrow">Latest insights</p>
+      {% assign posts = site.insights | sort: "date" | reverse %}
+      {% if posts.size > 0 %}
+        {% for post in posts limit: 3 %}
+        <p><a href="{{ post.url | relative_url }}">{{ post.title }}</a><br><span class="small">{{ post.date | date: "%-d %B %Y" }}</span></p>
+        {% endfor %}
+        <p><a href="{{ '/insights/' | relative_url }}">All insights</a></p>
+      {% else %}
+        <p class="small">The first pieces are in preparation.</p>
+      {% endif %}
+    </div>
+    <div>
+      <p class="eyebrow">Tool</p>
+      <h3 class="flush">Water utility bankability</h3>
+      <p class="small">Test how a Kenyan water utility's operating performance translates into its capacity to carry debt.</p>
+      <p><a class="button" href="{{ '/tools/' | relative_url }}">Open the tools</a></p>
+    </div>
+  </div>
+</section>

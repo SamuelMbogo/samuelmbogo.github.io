@@ -1,0 +1,187 @@
+---
+title: The Bankability Problem
+permalink: /tools/water-utility-bankability/
+summary: An interactive look at why Kenya's water utilities struggle to access commercial finance, built on regulator data.
+---
+<style>
+  .tool-page .bigstat-row { display: flex; flex-wrap: wrap; gap: 32px; margin: 40px 0 8px; padding: 24px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .tool-page .bigstat { flex: 1; min-width: 150px; }
+  .tool-page .bigstat-num { font-family: var(--mono); font-size: 2.2rem; line-height: 1; color: var(--accent); margin: 0 0 8px; }
+  .tool-page .bigstat-label { font-size: 0.88rem; color: var(--muted); line-height: 1.45; margin: 0; }
+  .tool { margin: 40px 0; padding: 32px; background: #F3F0EA; border: 1px solid var(--rule); }
+  .tool-title { margin-top: 0; }
+  .tool-intro { color: var(--muted); max-width: 560px; margin: 0 0 28px; }
+  .tool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+  .control { margin-bottom: 28px; }
+  .control-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+  .control-label { font-size: 0.92rem; font-weight: 500; }
+  .control-value { font-family: var(--mono); font-size: 1.15rem; color: var(--accent); font-weight: 500; }
+  .tool input[type="range"] { -webkit-appearance: none; appearance: none; width: 100%; height: 4px; background: var(--rule); outline: none; border-radius: 2px; }
+  .tool input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 22px; height: 22px; border-radius: 50%; background: var(--accent); cursor: pointer; border: 3px solid #F3F0EA; }
+  .tool input[type="range"]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 50%; background: var(--accent); cursor: pointer; border: 3px solid #F3F0EA; }
+  .control-scale { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 0.72rem; color: var(--muted); margin-top: 6px; }
+  .control-note { font-size: 0.8rem; color: var(--muted); margin-top: 8px; }
+  .gauge-wrap { text-align: center; }
+  .gauge-figure { font-family: var(--mono); font-size: 3rem; line-height: 1; margin: 8px 0 4px; }
+  .gauge-caption { font-size: 0.8rem; color: var(--muted); margin: 0 0 20px; }
+  .verdict { display: inline-block; font-size: 0.9rem; font-weight: 600; padding: 8px 16px; color: #F0EDE5; }
+  .verdict-sub { display: block; font-size: 0.84rem; color: var(--muted); margin: 14px auto 0; max-width: 300px; line-height: 1.45; }
+  .preset-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+  .preset { font-family: var(--sans); font-size: 0.8rem; padding: 6px 12px; background: transparent; border: 1px solid var(--rule); color: var(--muted); cursor: pointer; }
+  .preset:hover { border-color: var(--accent); color: var(--accent); }
+  .formula { font-family: var(--mono); font-size: 0.82rem; background: var(--bg); padding: 12px 14px; border-left: 2px solid var(--accent); color: var(--muted); margin: 24px 0 0; overflow-x: auto; white-space: nowrap; }
+  .tool-source { font-size: 0.8rem; color: var(--muted); margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--rule); line-height: 1.5; }
+  @media (max-width: 640px) {
+    .tool { padding: 20px; }
+    .tool-grid { grid-template-columns: 1fr; gap: 24px; }
+  }
+</style>
+
+<section class="wrap-narrow tool-page">
+  <p class="eyebrow">Tool · Kenya water finance</p>
+  <h1>The Bankability Problem</h1>
+  <p class="lede">Kenya needs <span class="num">KES 995 billion</span> to reach its 2030 water and sanitation goals. On a business-as-usual path, roughly <span class="num">KES 71 billion</span> of that has no identified source. The reason is not only a shortage of capital. Most of the utilities that would receive it cannot yet carry debt. Move the sliders below and you can see why.</p>
+
+  <div class="bigstat-row">
+    <div class="bigstat">
+      <p class="bigstat-num">98%</p>
+      <p class="bigstat-label">Average operating cost coverage across Kenya's regulated utilities in FY2023/24. Sustainability needs <span class="num">110%</span>.</p>
+    </div>
+    <div class="bigstat">
+      <p class="bigstat-num">44%</p>
+      <p class="bigstat-label">Sector non-revenue water in FY2023/24, rising to 48% in FY2024/25. The regulator's benchmark is <span class="num">25%</span>.</p>
+    </div>
+    <div class="bigstat">
+      <p class="bigstat-num">225.7bn</p>
+      <p class="bigstat-label">Estimated sector debt in Kenyan shillings, owed by utilities to the agencies that built their infrastructure.</p>
+    </div>
+  </div>
+
+  <div class="tool">
+    <p class="eyebrow">Interactive</p>
+    <h2 class="tool-title">Is this utility bankable?</h2>
+    <p class="tool-intro">Two operating numbers do most of the work in deciding whether a water utility can service a loan: how much of its water it actually bills for, and how much of what it bills it actually collects. The starting position is the FY2023/24 Kenyan sector average.</p>
+
+    <div class="tool-grid">
+      <div>
+        <div class="control">
+          <div class="control-head">
+            <span class="control-label">Non-revenue water</span>
+            <span class="control-value"><span id="nrwVal">44</span>%</span>
+          </div>
+          <input type="range" id="nrw" min="15" max="70" value="44" step="1" aria-label="Non-revenue water">
+          <div class="control-scale"><span>15%</span><span>benchmark 25%</span><span>70%</span></div>
+          <p class="control-note">Water produced but lost to leaks, theft or bad metering before it can be billed.</p>
+        </div>
+        <div class="control">
+          <div class="control-head">
+            <span class="control-label">Revenue collection efficiency</span>
+            <span class="control-value"><span id="colVal">88</span>%</span>
+          </div>
+          <input type="range" id="col" min="50" max="100" value="88" step="1" aria-label="Revenue collection efficiency">
+          <div class="control-scale"><span>50%</span><span></span><span>100%</span></div>
+          <p class="control-note">Share of billed revenue the utility actually collects from customers.</p>
+        </div>
+        <div class="preset-row">
+          <button class="preset" data-nrw="44" data-col="88">Sector average</button>
+          <button class="preset" data-nrw="25" data-col="95">Regulator benchmark</button>
+          <button class="preset" data-nrw="58" data-col="72">Distressed utility</button>
+        </div>
+      </div>
+
+      <div class="gauge-wrap">
+        <svg id="gauge" viewBox="0 0 200 120" width="220" height="132" role="img" aria-label="Operating cost coverage gauge">
+          <path d="M 20 110 A 80 80 0 0 1 180 110" fill="none" stroke="#D9D3C6" stroke-width="14" stroke-linecap="round"/>
+          <path id="gaugeArc" d="" fill="none" stroke="#0F5C6E" stroke-width="14" stroke-linecap="round"/>
+          <line id="benchTick" x1="0" y1="0" x2="0" y2="0" stroke="#16181D" stroke-width="2"/>
+        </svg>
+        <p class="gauge-figure"><span id="ccVal">98</span>%</p>
+        <p class="gauge-caption">Operating cost coverage</p>
+        <span class="verdict" id="verdict" style="background:#C99A46;">Marginal: below the sustainability line</span>
+        <span class="verdict-sub" id="verdictSub">The utility nearly covers its running costs but falls short of the 110% needed to be sustainable. This is roughly where the Kenyan sector average sits, and why so little commercial capital reaches it.</span>
+      </div>
+    </div>
+
+    <p class="formula">coverage = 98 + 1.7 × (44 − NRW) + 1.0 × (collection − 88)</p>
+
+    <p class="tool-source">Sector figures from the Water Services Regulatory Board's Impact Report 17 (FY2023/24) and Kenya's national water and sanitation investment plan; the FY2024/25 non-revenue water figure is as reported by the regulator in 2026. The coverage model is a deliberately transparent, first-order approximation, calibrated so the sector-average inputs reproduce the sector's 98% cost coverage and the regulator's efficiency targets move it toward sustainability. It illustrates the mechanism and is not a substitute for a full utility financial model.</p>
+  </div>
+
+  <h2>Why this matters</h2>
+  <p>What you just did is, in miniature, the first thing I do when a water project lands on my desk. An applicant arrives with a financial model that shows the utility comfortably servicing the loan it is asking for. That model rests on assumptions: a metering ratio, a collection rate, a non-revenue water figure. My job is to ask whether those assumptions match what the utility has actually delivered.</p>
+  <p>Kenya is unusually well set up for that question, because the regulator publishes the answer. Its annual Impact Report scores every licensed utility on the same indicators, including the two you just moved. Three years of those reports read together give a trajectory that exists independently of anything the applicant has said.</p>
+  <p>The gap between where an applicant's projections sit on that gauge and where the regulator's data sits is usually the difference between a bankable transaction and one that will need concessional support at every debt service date. Finding that gap early protects scarce concessional capital from being deployed against numbers that were never going to hold.</p>
+  <p>
+    <a class="button primary" href="{{ '/work/utility-credit-cross-check/' | relative_url }}">See the method applied</a>
+    <a class="button" href="{{ '/tools/' | relative_url }}">All tools</a>
+  </p>
+</section>
+
+<script>
+(function () {
+  var nrwEl = document.getElementById('nrw');
+  var colEl = document.getElementById('col');
+  var nrwVal = document.getElementById('nrwVal');
+  var colVal = document.getElementById('colVal');
+  var ccVal = document.getElementById('ccVal');
+  var arc = document.getElementById('gaugeArc');
+  var benchTick = document.getElementById('benchTick');
+  var verdict = document.getElementById('verdict');
+  var verdictSub = document.getElementById('verdictSub');
+  var CX = 100, CY = 110, R = 80, GAUGE_MAX = 160;
+
+  function polar(pct) {
+    var ang = Math.PI * (1 - pct);
+    return { x: CX + R * Math.cos(ang), y: CY - R * Math.sin(ang) };
+  }
+  function arcPath(fromPct, toPct) {
+    var a = polar(fromPct), b = polar(toPct);
+    return 'M ' + a.x.toFixed(2) + ' ' + a.y.toFixed(2) + ' A ' + R + ' ' + R + ' 0 0 1 ' + b.x.toFixed(2) + ' ' + b.y.toFixed(2);
+  }
+  function color(cc) {
+    if (cc >= 130) return '#0F5C6E';
+    if (cc >= 110) return '#5E8C6A';
+    if (cc >= 100) return '#B0872F';
+    if (cc >= 88) return '#C99A46';
+    return '#A3542E';
+  }
+  function verdictText(cc) {
+    if (cc >= 130) return ['Commercially bankable', 'The utility generates a real surplus over running costs. On these numbers it could service debt on close-to-commercial terms, the position a lender needs to see.'];
+    if (cc >= 110) return ['Sustainable: investment-ready', 'The utility covers its costs with margin to spare. It is a credible candidate for blended or concessional finance, with commercial debt reachable over time.'];
+    if (cc >= 100) return ['Covers O&M, not yet bankable', 'The utility breaks even on running costs but has little left to service debt. It needs efficiency gains or concessional support before commercial lenders will engage.'];
+    if (cc >= 88) return ['Marginal: below the sustainability line', 'The utility nearly covers its running costs but falls short of the 110% needed to be sustainable. This is roughly where the Kenyan sector average sits, and why so little commercial capital reaches it.'];
+    return ['Sub-viable: requires subsidy', 'The utility cannot cover its own operating costs. Any capital deployed here is effectively a grant unless the operating numbers move first.'];
+  }
+  function update() {
+    var nrw = +nrwEl.value, col = +colEl.value;
+    var cc = Math.round(98 + 1.7 * (44 - nrw) + 1.0 * (col - 88));
+    if (cc < 0) cc = 0;
+    nrwVal.textContent = nrw;
+    colVal.textContent = col;
+    ccVal.textContent = cc;
+    var pct = Math.max(0, Math.min(1, cc / GAUGE_MAX));
+    arc.setAttribute('d', arcPath(0, pct === 0 ? 0.001 : pct));
+    arc.setAttribute('stroke', color(cc));
+    var bPct = 110 / GAUGE_MAX, a = Math.PI * (1 - bPct);
+    benchTick.setAttribute('x1', (CX + (R - 10) * Math.cos(a)).toFixed(2));
+    benchTick.setAttribute('y1', (CY - (R - 10) * Math.sin(a)).toFixed(2));
+    benchTick.setAttribute('x2', (CX + (R + 10) * Math.cos(a)).toFixed(2));
+    benchTick.setAttribute('y2', (CY - (R + 10) * Math.sin(a)).toFixed(2));
+    var v = verdictText(cc);
+    verdict.textContent = v[0];
+    verdict.style.background = color(cc);
+    verdictSub.textContent = v[1];
+  }
+  nrwEl.addEventListener('input', update);
+  colEl.addEventListener('input', update);
+  var presets = document.querySelectorAll('.preset');
+  for (var i = 0; i < presets.length; i++) {
+    presets[i].addEventListener('click', function () {
+      nrwEl.value = this.getAttribute('data-nrw');
+      colEl.value = this.getAttribute('data-col');
+      update();
+    });
+  }
+  update();
+})();
+</script>
