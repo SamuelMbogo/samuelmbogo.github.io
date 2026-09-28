@@ -1,0 +1,38 @@
+title: Samuel Mbogo
+tagline: Finding what makes an investment work, from infrastructure to the businesses around it.
+description: Investment analyst building depth across project finance, credit and valuation. Nairobi, Kenya.
+author: Samuel Thongoro Mbogo
+email: officialsammbogo@gmail.com
+linkedin: https://www.linkedin.com/in/samuel-mbogo
+url: "https://samuelmbogo.github.io"
+baseurl: ""
+
+markdown: kramdown
+permalink: pretty
+
+collections:
+  work:
+    output: true
+    permalink: /work/:name/
+  insights:
+    output: true
+    permalink: /insights/:name/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: work
+    values:
+      layout: entry
+  - scope:
+      path: ""
+      type: insights
+    values:
+      layout: entry
+
+exclude:
+  - README.md
