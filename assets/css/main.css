@@ -204,3 +204,8 @@ p { margin: 0 0 1.1em; }
   .site-main { padding: 40px 0 64px; }
   .grid-2, .grid-3 { grid-template-columns: 1fr; }
 }
+
+/* Home and section helpers */
+.hero-title { font-size: clamp(2.2rem, 5.5vw, 3.6rem); max-width: 900px; }
+.proof-figure { font-size: 2rem; color: var(--accent); margin: 0 0 4px; }
+.flush { margin-top: 0; }
