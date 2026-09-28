@@ -25,7 +25,7 @@ summary: Case studies across project finance, credit and valuation, from a USD 1
 </section>
 {% endif %}
 
-{% assign areas = "Project and infrastructure finance|Credit and capital structuring|Valuation and exits|Earlier roles" | split: "|" %}
+{% assign areas = "Project and infrastructure finance|Credit and capital structuring|Valuation and exits|Advisory and assurance|Earlier roles" | split: "|" %}
 <section class="wrap-narrow section">
   {% for area in areas %}
     {% assign items = site.work | where: "focus", area | sort: "order", "last" %}
