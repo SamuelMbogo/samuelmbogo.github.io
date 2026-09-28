@@ -1,0 +1,27 @@
+---
+title: Insights
+permalink: /insights/
+summary: Notes on how investment questions in infrastructure and development finance actually get worked through.
+---
+<section class="wrap-narrow">
+  <p class="eyebrow">Insights</p>
+  <h1>Notes from the work.</h1>
+  <p class="lede">Short pieces on the questions I am working through: how to test a project's numbers, how to judge patient capital, and how facilities structure themselves to grow.</p>
+</section>
+
+<section class="wrap-narrow section">
+  {% assign posts = site.insights | sort: "date" | reverse %}
+  {% if posts.size > 0 %}
+  <ul class="work-list">
+    {% for post in posts %}
+    <li>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <p class="small">{{ post.summary }}</p>
+      <span class="tag">{{ post.date | date: "%-d %B %Y" }}</span>{% if post.topic %}<span class="tag">{{ post.topic }}</span>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="small">The first pieces are in preparation.</p>
+  {% endif %}
+</section>
