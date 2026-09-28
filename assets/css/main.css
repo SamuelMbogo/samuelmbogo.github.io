@@ -221,3 +221,10 @@ p { margin: 0 0 1.1em; }
   .about-grid { grid-template-columns: 1fr; gap: 32px; }
   .portrait img { max-width: 240px; }
 }
+
+/* Work index */
+.work-list { list-style: none; padding: 0; margin: 0 0 32px; }
+.work-list li { border-top: 1px solid var(--rule); padding: 20px 0; }
+.work-list li > a { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; color: var(--ink); text-decoration: none; }
+.work-list li > a:hover { color: var(--accent); }
+.work-list .small { margin: 6px 0 10px; }
